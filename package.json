@@ -1,0 +1,51 @@
+{
+  "name": "foursquare-checkin-collector",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm prune",
+    "postinstall": "./bin/postinstall.sh",
+    "test": "./node_modules/.bin/grunt pre-verify",
+    "clean": "./bin/clean.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stateshifters/foursquare-checkin-collector.git"
+  },
+  "keywords": [
+    "foursquare",
+    "checkin"
+  ],
+  "author": "designhorf@tailored-tunes.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stateshifters/foursquare-checkin-collector/issues"
+  },
+  "homepage": "https://github.com/stateshifters/foursquare-checkin-collector#readme",
+  "description": "",
+  "config": {
+    "travis-cov": {
+      "threshold": 100
+    }
+  },
+  "devDependencies": {
+    "blanket": "^1.1.7",
+    "chai": "^3.3.0",
+    "eslint": "^1.6.0",
+    "grunt": "^0.4.5",
+    "grunt-check-modules": "^1.0.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^17.2.0",
+    "grunt-githooks": "^0.3.1",
+    "grunt-mocha-test": "^0.12.7",
+    "load-grunt-configs": "^0.4.3",
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.3",
+    "npm-check-updates": "^2.3.0",
+    "nsp": "^1.1.0",
+    "sinon": "^1.17.1",
+    "travis-cov": "^0.2.5"
+  }
+}
