@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 				'config/**/*.js'
 			],
 			jsTestFiles: [
-				'test/js/**/*.js'
+				'test/**/*.js'
 			]
 		},
 		configs = require('load-grunt-configs')(grunt, options);
