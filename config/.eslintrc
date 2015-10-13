@@ -334,10 +334,6 @@
         "nonwords": false
       }
     ],
-    "spaced-comment": [
-      2,
-      "never"
-    ],
     "wrap-regex": 2
   }
 }

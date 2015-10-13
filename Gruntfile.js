@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 			isJenkins: Boolean(grunt.option('jenkins')),
 			jsFiles: [
 				'Gruntfile.js',
-				'js/**/*.js',
+				'app/**/*.js',
 				'config/**/*.js'
 			],
 			jsTestFiles: [
