@@ -7,7 +7,8 @@
     "require": false,
     "JSON": false,
     "module": false,
-    "global": false
+    "global": false,
+    "process": false
   },
   "rules": {
     "comma-dangle": [

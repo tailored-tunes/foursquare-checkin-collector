@@ -14,7 +14,8 @@ module.exports = function (grunt) {
 			jsFiles: [
 				'Gruntfile.js',
 				'app/**/*.js',
-				'config/**/*.js'
+				'config/**/*.js',
+				'index.js'
 			],
 			jsTestFiles: [
 				'test/**/*.js'

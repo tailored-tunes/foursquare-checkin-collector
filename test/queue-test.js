@@ -1,7 +1,5 @@
 'use strict';
 
-/* global describe: true, it: true, beforeEach: true */
-
 var sinon = require('sinon'),
 	Chance = require('chance'),
 	chance = new Chance();
