@@ -1,6 +1,7 @@
 'use strict';
 
-var AWS = require('aws-sdk');
+var AWS = require('aws-sdk'),
+	messageConverter = require('./messageConverter');
 
 AWS.config.update({
 	maxRetries: 3
@@ -8,7 +9,7 @@ AWS.config.update({
 
 module.exports = function (snsTopic, awsRegion) {
 	var sns = new AWS.SNS({params: {TopicArn: snsTopic, region: awsRegion}}),
-		publisher = require('./publisher')(sns);
+		publisher = require('./aws-publisher')(sns, messageConverter);
 
 	return publisher;
 };
