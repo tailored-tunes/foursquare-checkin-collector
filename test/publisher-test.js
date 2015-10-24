@@ -16,9 +16,10 @@ beforeEach(function () {
 describe('The publisher', function () {
 	it('should call the 3rd party publisher with the correct message', function (done) {
 		var cb = sinon.stub(),
-			publisher = require('../app/lib/publisher')(this.mockSnsApi);
+			publisher = require('../app/lib/publisher')(this.mockSnsApi),
+			expectedMessage = {Message: '"' + this.message + '"'};
 
-		this.mockSns.expects('publish').once().withArgs(this.message, cb).callsArgWith(1, false);
+		this.mockSns.expects('publish').once().withArgs(expectedMessage, cb).callsArgWith(1, false);
 
 		publisher.store(this.message, cb);
 		assert.equal(cb.calledWith(false), true);
@@ -29,9 +30,10 @@ describe('The publisher', function () {
 
 	it('should handle errors', function (done) {
 		var cb = sinon.stub(),
-			publisher = require('../app/lib/publisher')(this.mockSnsApi);
+			publisher = require('../app/lib/publisher')(this.mockSnsApi),
+			expectedMessage = {Message: '"' + this.message + '"'};
 
-		this.mockSns.expects('publish').once().withArgs(this.message, cb).callsArgWith(1, true);
+		this.mockSns.expects('publish').once().withArgs(expectedMessage, cb).callsArgWith(1, true);
 
 		publisher.store(this.message, cb);
 

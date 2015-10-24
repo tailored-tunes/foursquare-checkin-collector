@@ -30,10 +30,11 @@ describe('checkin route', function () {
 	});
 
 	it('passes message to the queue', function (done) {
-		var msg = chance.string();
+		var msg = chance.string(),
+			request = {payload: msg};
 
 		this.queue.expects('push').withExactArgs(msg, sinon.match.func).once().callsArgWith(1, false);
-		this.handler.response(msg, reply);
+		this.handler.response(request, reply);
 		this.queue.verify();
 		done();
 	});

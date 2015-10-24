@@ -1,14 +1,14 @@
 'use strict';
 
-module.exports = function (snsTopic, awsRegion, retryCount) {
-	var AWS = require('aws-sdk'),
-		sns = new AWS.SNS({params: {TopicArn: snsTopic}}),
-		publisher = require('./publisher')(sns);
+var AWS = require('aws-sdk');
 
-	AWS.config.update({
-		region: awsRegion || 'us-east-1',
-		maxRetries: retryCount || 3
-	});
+AWS.config.update({
+	maxRetries: 3
+});
+
+module.exports = function (snsTopic, awsRegion) {
+	var sns = new AWS.SNS({params: {TopicArn: snsTopic, region: awsRegion}}),
+		publisher = require('./publisher')(sns);
 
 	return publisher;
 };
