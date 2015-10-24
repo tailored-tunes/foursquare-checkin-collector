@@ -2,7 +2,9 @@
 
 var Hapi = require('hapi'),
 	server = new Hapi.Server(),
-	handler = require('./app/checkin-parser.js');
+	publisher = null,
+	queue = require('./app/lib/queue.js')(publisher),
+	handler = require('./app/checkin-parser.js')(queue);
 
 server.connection({
   port: 8000+process.env.NODE_APP_INSTANCE,
