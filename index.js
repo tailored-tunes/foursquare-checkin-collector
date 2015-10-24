@@ -5,10 +5,10 @@ var Hapi = require('hapi'),
 	publisher = require('./app/lib/aws.js')(process.env.SNS_TOPIC, process.env.AWS_REGION),
 	queue = require('./app/lib/queue.js')(publisher),
 	handler = require('./app/checkin-parser.js')(queue),
-	port = process.env.NODE_APP_INSTANCE || 0;
+	port = process.env.PORT || 8000;
 
 server.connection({
-	port: 8000 + port,
+	port: port,
 	routes: {
 		cors: true
 	}
