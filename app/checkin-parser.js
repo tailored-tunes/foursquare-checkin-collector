@@ -5,7 +5,7 @@ module.exports = function (queue) {
 		response: function (request, reply) {
 			queue.push(request, function (err) {
 				if (err) {
-					reply('{}');
+					reply(new Error(err));
 				} else {
 					reply('{}');
 				}

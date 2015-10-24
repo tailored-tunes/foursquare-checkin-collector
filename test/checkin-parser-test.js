@@ -37,5 +37,17 @@ describe('checkin route', function () {
 		this.queue.verify();
 		done();
 	});
+
+	it('returns 500 when queue fails', function (done) {
+
+		var msg = chance.string();
+
+		this.queue.expects('push').callsArgWith(1, true);
+		this.handler.response(msg, reply);
+
+		assert.equal(reply.calledWith(sinon.match.instanceOf(Error)), true, 'Reply was not called with a 500 error');
+
+		done();
+	});
 });
 
