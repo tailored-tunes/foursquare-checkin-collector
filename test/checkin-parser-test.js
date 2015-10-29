@@ -1,13 +1,5 @@
 'use strict';
 
-// be -> {
-// 	headers: {},
-// 	payload: '{}'
-// }
-// erdekes -> van-e checkin param
-// tovabb -> { //checkin data
-// }
-
 var chai = require('chai'),
 	assert = chai.assert,
 	sinon = require('sinon'),
